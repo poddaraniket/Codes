@@ -1,0 +1,19 @@
+ 1. Travelling Salesman Problem
+2. C++ Program To Recursively Remove All Adjacent Duplicates
+3. Job Schedulling doubt [Offyc lappy]
+
+1.Design an Extension to check JAVA code in VS CODE
+2. design weather station by giving constraints.(Those problems can be easily cracked by knowing segment trees, self-balancing trees, Min heap and max- heap).
+3. Given a 1000 page book, each page has 100 words. I have to return the top 100 words based on a higher frequency of words[Trie Approach]
+4. Design of Netflix, Ola/Uber Design, Design of ATM security system[System Design]
+5. https://www.geeksforgeeks.org/samsung-bangalore-internship-interview-experience-on-campus/ [Round2 Music]
+
+R121185,R116998 ->Adobe
+
+
+
+
+ 
+
+
+

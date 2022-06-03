@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  int n,i;
+  cin>>n;
+  int x[n],y[n],ans_home[n],ans_away[n];
+  int cnt[100001]={0};
+  for(i=0;i<n;i++)
+   {
+     cin>>x[i]>>y[i];
+     cnt[x[i]]++;
+   } 
+  for(i=0;i<n;i++)
+   {
+     ans_home[i]=n-1;
+     ans_home[i]+=cnt[y[i]];
+     ans_away[i]=2*(n-1)-ans_home[i];
+   } 
+  for(i=0;i<n;i++)
+   {
+     cout<<ans_home[i]<<" "<<ans_away[i]<<endl;
+   } 
+}

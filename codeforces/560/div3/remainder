@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+#include<math.h>
+
+using namespace std;
+
+int main() {
+  int n,x,y,c,q=0,i;
+  cin>>n>>x>>y;
+  string num,rem="1";
+  cin>>num;
+  //cout<<num<<endl;
+  c=(x-y)-1;
+  while(y)
+    {
+        rem=rem+'0';
+        y--;
+    }
+  //cout<<rem<<endl;
+  num.erase(0,n-x);
+ // cout<<num<<endl;
+  //rem=to_string(p);
+  while(c)
+  {
+    rem='0'+rem;
+    c--;
+  }
+  //cout<<rem<<endl;
+  for(i=0;i<num.length();i++)
+   {
+      if(num[i]!=rem[i])
+        q++;
+   }
+  cout<<q<<endl;  
+}

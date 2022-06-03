@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+long long int kmin(int n,int m)
+{
+    long long int temp,val,val1,mod;
+    temp=n/m;
+    val=(temp*(temp-1))/2;
+    val1=((temp+1)*temp)/2;
+    mod=n%m;
+    if(mod==0)
+     {
+         return(val*m);
+     }
+    else
+    {
+        return((val*(m-mod))+(val1*mod));
+    }
+}
+
+long long int kmax(int n,int m)
+{
+    long long int temp;
+    temp=n-(m-1);
+    return ((temp*(temp-1))/2);
+}
+
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    cout<<kmin(n,m)<<" "<<kmax(n,m)<<endl;;
+    // coutkmax=(n,m);
+}

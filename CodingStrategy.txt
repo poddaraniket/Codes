@@ -1,0 +1,2 @@
+1. When we have two look for a triplet fix the middle element and look left-Right for the other two.   [eg- Number of Ways to Select Buildings]
+2. Having 'n' things &  'k' people. find max/min constraint.   

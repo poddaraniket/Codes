@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int main() {
+   int ti,n,i,c=0;
+   int a[100000]={-1};
+   string s,t;
+   cin>>ti;
+   while(ti--)
+    {
+      c=0;
+      cin>>n;
+      cin>>s;
+      cin>>t;
+      for(i=0;i<n;i++)
+       {
+         if(s[i]!=t[i])
+          {
+            a[c]=i;
+            c++;
+          }
+       }
+      if(c==2)
+       {
+         if(s[a[0]]==s[a[1]] && t[a[0]]==t[a[1]])
+           cout<<"Yes"<<endl;
+         else 
+           cout<<"No"<<endl;  
+       }
+      else
+        cout<<"No"<<endl;  
+    }
+}

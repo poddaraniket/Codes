@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    int n,m,i,num;
+    long long int s=0,diff,temp;
+    cin>>n>>m;
+    int a[m];
+    for(i=0;i<m;i++)
+     {
+         cin>>num;
+         a[i]=num;
+     }
+    s+=a[0]-1; 
+    for(i=1;i<m;i++)
+     {
+        if(a[i]<a[i-1])
+         {
+             diff=n-a[i-1];
+             temp=a[i]+diff;
+             s+=temp;
+         }
+        else
+          s+=a[i]-a[i-1];
+     }
+    cout<<s<<endl; 
+}

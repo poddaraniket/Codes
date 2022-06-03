@@ -1,0 +1,56 @@
+ 1. Count smaller elements on right side [right-> left main jitney hai + 1 ; left-> parent mai plus 1 kardo and return that]  -------------
+ 2. Prims & Kruskal [TODO]
+ 3. Nodes_At_K_Distance_from_Node(Both_Dir)
+ 4. Aggresive Cows(BS based questions)
+ 5. Floyd Warshall,Dijkstra,Bellman-Ford [TODO]
+ 6. Moore’s Voting Algorithm
+ 7. Tarjan’s Algorithm [Ratta] 		-----------------------------------------------------                                                    {LD}
+ 8. Kosaraju  [TODO]
+ 9. Longest Palindromic/Common  [Substring VS Subsequence]   
+10. find-largest-prime-factor-number
+11. Ugly
+12. handshake,bracket,triangulation [Catalan Variation]
+13. sieve of eratosthenes
+14. Clone a linked list with next and random pointer
+15. KMP Algo [Part 1 -> find prefix( start from the begining) same as suffix(end with the last char)  of the pattern (create lps table) ; Part2 -> use that table to do pattern searching ]
+16. Tower Of Hanoi
+17. Largest BST 
+18. Wordbreak Problem
+19. Egg Droping problem
+20. Frog Jump[Nice Question] -{Paypal}
+21. kth element in two soretd Arrays
+22. Reverse Linked List in K groups
+23. Frequency of a substring in a string [KMP Algo]
+24. Maximum product of subsequence of size k
+25. Validate Binary SearchTree
+26. Hash table O(1) ------------------------------------------------------------- {LD}
+27. GetMin in stack in O(1)  [Push -> (2*x – min/maxEle)[if element is smaller then current Min]  Pop -> 2*min/maxEle – y(if element is les than the currentMin)]
+28. 2D VS 1D in DP
+29. LIS (ONogN)
+30. Print Max A's using 4 keys         --------------------------------------------{LD}
+31. LRU
+32. Celebrity problem
+33. Buy and Sell Stock
+34. Snake & Ladder
+35. Merge Sort / Count Inversions
+36. Water the plant [GFG_Interv_Flipkart]
+37. Palindrom pair [GFG_Interv_Amazon]
+38. Max Sum Without Adjacent[GFG_Interv_Amazon]
+39. Largest Number In 'k' Swaps [GFG_Interv_Intuit]
+40. Largest Cycle Sum [GFG_Interv_Juspay]
+41. Max Product Subbaray/Length of Longest SubArray With Positive Product
+42. Morris Traversal
+43. Increasing Tripllet Subsequence [O(N) & O(1)]
+44. Word Ladder
+45. Partition into k subsets
+46. Partition in to k equal sum subsets
+47. Min Subset Sum Problem[0/1 knapsack & Subset Problem]
+
+
+
+
+
+
+
+
+

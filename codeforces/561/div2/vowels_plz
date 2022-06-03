@@ -1,0 +1,60 @@
+#include <bits/stdc++.h>
+//#include <string.h>
+
+using namespace std;
+
+int main() {
+  //cout<<"hi"<<endl;
+  string ans="";
+  char name[2000][2000];
+  string fixed[]={"aeiou","eioua","iouae","ouaei","uaeio"};
+  char vowels[]={'a','e','i','o','u'};
+  int n,temp,i,c=0,row,col,d=0,j,flag=0;
+  cin>>n;
+  if(n>=25)
+  {
+   i=2; 
+   while(i>1 && i<n)
+    {
+      //cout<<"hi"<<endl;
+      if(n%i==0)
+       {
+         temp=n/i;
+         if(i>=5 && temp>=5)
+          {
+            c=1;
+            row=i;
+            col=temp;
+            if(col%5==0)
+              flag=1;
+            break;
+          }
+       }
+      i++;        
+    } 
+  }
+  //cout<<"bye"<<endl;
+  if(flag==0)
+  {
+  if(c==0)
+     cout<<"-1"<<endl;
+  else
+    {
+      //cout<<"wel"<<endl;
+      for(i=0;i<n;i++)
+       {
+          ans+=vowels[d%5];
+          d++;
+        }
+    }
+  cout<<ans<<endl; 
+ } 
+ else{
+    for(i=0;i<n;i+=5)
+      {
+        ans+=fixed[d%5];
+        d++;
+      }
+    cout<<ans<<endl;  
+ }      
+}

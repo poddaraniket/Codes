@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int lps(char *sent)
+{
+    int n=strlen(sent);
+    //cout<<n<<endl;
+    int l[n][n];
+    int i,j,sl;
+    for(i=0;i<n;i++)
+      {
+        l[i][i]=1;    
+      }
+    // for(i=0;i<n;i++)
+    //   {
+    //     if(sent[i]==sent[i+1])
+    //       l[i][j]=2;
+    //     else
+    //       l[i][j]=max(l[i+1][j],l[i][j-1]);
+    //   }  
+    for(sl=2;sl<=n;sl++)
+      {
+          for(i=0;i<n-sl+1;i++)
+            {
+                j=i+sl-1;
+                if(sent[i]==sent[j] && sl==2)
+                  l[i][j]=2;
+                else if(sent[i]==sent[j])
+                  l[i][j]=l[i+1][j-1]+2;
+                else  
+                  l[i][j]=max(l[i+1][j],l[i][j-1]);
+            }
+      }
+    // for(i=0;i<n;i++)
+    //   {
+    //       for(j=i;j<n;j++)
+    //       {
+    //           cout<<l[i][j]<<"";
+    //       }
+    //     cout<<endl;   
+    //   }
+    return l[0][n-1];  
+}
+
+int main() {
+	// your code goes here
+    char seq[] = "BABCBAB"; 
+    printf ("The lnegth of the LPS is %d", lps(seq));
+    return 0; 
+}

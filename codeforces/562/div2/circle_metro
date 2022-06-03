@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  int n,a,b,x,y,temp,flag=0;
+  cin>>n>>a>>x>>b>>y;
+  temp=a;
+  // n=n+1;
+  int temp1=b;
+  while((temp%n)!=x && (temp1%n)!=y)
+   {
+    cout<<temp%n<<" "<<temp1%n<<endl;
+     if(temp1==0)
+       temp1=n;
+     if(((temp++)%n)-(abs(temp1--)%n)==0)
+      {
+        cout<<"YES"<<endl;
+        flag=1;
+        break;
+      }
+   }
+    cout<<temp%n<<" "<<temp1%n<<endl; 
+  if(flag==0)
+   {
+     if((temp1%n)==(temp%n))
+       cout<<"YES"<<endl;
+     else
+       cout<<"NO"<<endl;  
+   } 
+}

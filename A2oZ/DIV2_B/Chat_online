@@ -1,0 +1,62 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  int p,q,l,r,i,num,j,temp,temp1,k,c=0,num1,g=0;
+  vector<int> z;
+  vector<int> x;
+  cin>>p>>q>>l>>r;
+  for(i=0;i<p;i++)
+    {
+      cin>>num>>num1;
+      z.push_back(num);
+      z.push_back(num1);
+    }
+  for(i=0;i<q;i++)
+    {
+      cin>>num>>num1;     
+      x.push_back(num);
+      x.push_back(num1);
+    }
+  // for(i=0;i<z.size();i++)
+  //  cout<<z[i]<<" ";
+  // cout<<endl; 
+  // for(i=0;i<x.size();i++)
+  //  cout<<x[i]<<" ";  
+  //  cout<<endl; 
+  for(i=l;i<=r;i++)
+    {
+      g=0;
+      for(j=0;j<x.size()-1;j+=2)
+       {
+         if(g>0)
+          break;
+         temp=x[j]+i;
+         temp1=x[j+1]+i;
+         for(k=0;k<z.size();k+=2)
+          {
+            g=0;
+            if(temp>=z[k] && temp<=z[k+1])
+              {
+                g=1;
+                c++;
+                break;
+              }
+            if(temp1>=z[k] && temp1<=z[k+1])
+              {
+                g=1;
+                c++;
+                break;
+              } 
+            if(z[k]>=temp && z[k+1]<=temp1)
+              {
+                g=1;
+                c++;
+                break;
+              }   
+          }  
+       }
+    } 
+  cout<<c<<endl;   
+}

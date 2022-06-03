@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+
+#define MAX 10^18
+
+using namespace std;
+
+int main() {
+  vector<int> a(100000);
+  fill(a.begin(),a.end(),1);
+  int t,q,n,type,x,y,l,r,p,s=0,T,d=0;
+  //cout<<a[1000]<<endl;
+  cin>>T;
+  while(T--)
+    {
+      cin>>n>>t;
+      while(t)
+       {
+         cin>>type;
+         if(type==1)
+          {
+            cin>>y;
+            x=s+y;
+            a[x]=0;
+          }
+         else{
+           cin>>p>>q;
+           l=p+s;
+           r=q+s;
+          // cout<<l<<" "<<r<<endl;
+           while(a[r]==0)
+            {
+              //cout<<"hi"<<endl;
+              r--;
+              if(r<l)
+               {
+                  r=0;
+                  break;
+               }
+            }  
+            cout<<r<<endl; 
+            d+=r;
+            s=d%n;   
+         } 
+         t--;
+       }
+    }
+}

@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int n,i,num,day=1;
+    vector <int> v;
+    cin>>n;
+    for(i=0;i<n;i++)
+      {
+        cin>>num;
+        v.push_back(num);
+      }  
+     // cout<<s<<endl;
+    sort(v.begin(),v.end());
+    i=0;
+    while(i<v.size())
+      {
+        if(day<=v[i])
+         {
+          v[i]-=day;
+           day++;
+         }
+        i++;
+      } 
+    cout<<day-1<<endl;     
+}

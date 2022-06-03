@@ -1,0 +1,71 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int c=0,min=10,max=0,minloc,maxloc,i,p=0;
+    char temp;
+    string n;
+    cin>>n;
+    int z=n.length();
+    for(i=0;i<n.length();i++) 
+     {
+         if(((int)n[i])%2==0)
+          c++;
+     }
+   if(c==1)
+    {
+       for(i=0;i<n.length();i++)
+         {
+            if(((int)n[i])%2==0)
+             {
+                 temp=n[z-1];
+                 n[z-1]=n[i];
+                 n[i]=temp;
+                 break;
+             }
+         }
+    }
+    else if(c==0)
+     {
+         cout<<"-1"<<endl;
+     }
+    else{
+        for(i=0;i<n.length();i++)
+          {
+              if((int)n[i]%2==0)
+               {
+                   if((int)n[z-1]>(int)n[i])
+                    {
+                        p=1;
+                        temp=n[z-1];
+                        n[z-1]=n[i];
+                        n[i]=temp;
+                        break;
+                    }
+               }
+          }
+        if(p==0)
+         {
+             for(i=n.length()-1;i>=0;i--)
+              {
+                  if((int)n[i]%2==0)
+                    {
+                       temp=n[z-1];
+                       n[z-1]=n[i];
+                       n[i]=temp;
+                       break;  
+                    }
+              }
+         }
+    }
+    if(c>0)
+     {
+         for(i=0;i<n.length();i++)
+           {
+               cout<<n[i];
+           }
+         cout<<endl;  
+     }
+}

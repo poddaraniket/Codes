@@ -1,0 +1,5 @@
+
+most asked Set :
+Given an unsorted 2D Array, sort each row of the array without using any inbuilt functions. I solved this with a simple bubble sort on each row with O(n^3) time complexity. My solution passed all test cases.
+Given a binary tree convert it to its sum tree. My method of solving it was similar to the method in the link and was able to pass all test cases.
+Given a BST, delete keys which do not lie in given range. I solved it using a recursive method similar to the one provided in the linked article.

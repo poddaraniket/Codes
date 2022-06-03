@@ -1,0 +1,10 @@
+1. design a digital blackboard on which when a child write a letter then it can understand 
+  the written letter. ( approach: – just considered blackboard a 2D matrix and then by using dfs 
+   mark the connected component and compare it with structure pattern of actual letters)
+
+
+2. design a digital blackboard on which when a child write a letter then it can understand the 
+  written letter. ( approach: – just considered blackboard a 2D matrix and then by using dfs mark 
+  the connected component and compare it with structure pattern of actual letters)
+
+3. https://www.geeksforgeeks.org/implement-a-phone-directory/.

@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int ls(int a[m][n])
+{
+    // cout<<m<<" "<<n;
+    int cache[m][n];
+    int i,j,max=0;
+    for(i=0;i<m;i++)
+     {
+         for(j=0;j<n;j++)
+          {
+              if(i==0 || j==0)
+                cache[i][j]=a[i][j];
+              else{
+                  if(a[i][j]==0)
+                    cache[i][j]=0;
+                  else
+                  {
+                    cache[i][j]=a[i][j]+min(min(cache[i-1][j],cache[i-1][j-1]),cache[i][j-1]);
+                    if(max<cache[i][j])
+                      max=cache[i][j];
+                  }
+                    
+              }
+          }
+     }
+    // for(i=0;i<m;i++)
+    //  {
+    //      for(j=0;j<n;j++)
+    //      {
+    //       cout<<cache[i][j]<<" ";  
+    //      }
+    //     cout<<endl;   
+    //  }
+     return max;
+}
+
+int main()
+{
+    int m=4,n=5;
+    int a[m][n]={{1,1,0,1,0},{0,1,1,1,0},{1,1,1,1,0},{0,1,1,1,1}};
+    int z;
+    z= ls(a);
+    cout<<z<<endl;
+    return 0;  
+}

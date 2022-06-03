@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+int n,x,y,k,rem,div,s;
+cin>>n;
+while(n)
+  {
+    cin>>x>>y>>k;
+    s=x+y+1;
+    //cout<<s<<endl;
+    div=s/k;
+    rem=s%k;
+    if(div %2!=0 && rem !=0)
+     cout<<"Paja"<<endl;
+    else if(div%2==0 && rem==0)
+     cout<<"Paja"<<endl;
+    else 
+      cout<<"Chef"<<endl;  
+    n--;
+  }
+}

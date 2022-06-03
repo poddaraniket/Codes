@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  int n,k,i,p=1,j,l;
+  cin>>n>>k;
+  string s="";
+  int a[n],b[n];
+  for(i=0;i<n;i++)
+   {
+     cin>>a[i];
+     b[i]=a[i];
+   }
+  sort(a,a+n);
+  if(k<a[n-1])
+   {
+     if(a[n-1]-k>a[0])
+       s="NO";
+     else 
+       s="YES";  
+   }
+  else
+    s="YES";
+  if(s=="YES")
+   {
+     cout<<s<<endl;
+     for(i=0;i<n;i++)
+      {
+        for(j=1;j<=b[i];j++)
+          {
+            l=j%k;
+            if(l==0)
+             cout<<k<<" ";
+            else
+             cout<<l<<" "; 
+          }
+        cout<<endl;  
+      }
+   } 
+  else
+    cout<<s<<endl;   
+}

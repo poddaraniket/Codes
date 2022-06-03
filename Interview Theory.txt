@@ -1,0 +1,47 @@
+1. How does garbage collector work?
+->All objects are allocated on the heap area managed by the JVM.  As long as an object is being referenced[the variable or pointer is in stack], the JVM considers it alive. Once an object is no
+   longer referenced and therefore is not reachable by the application code, the garbage collector removes  removes the unreferenced objects from heap memory and reclaims the unused memory. 
+
+
+2. Algo used in Garbage Collector
+ -> The Mark-Sweep algorithm is the most common garbage collection algorithm, which performs two operations. It first marks the objects to be garbage-collected in the memory space and 
+      then clears the marked objects up from the heap.
+
+
+3. Query of transaction
+
+ -> 
+ -- 1. start a new transaction
+START TRANSACTION;
+
+-- 2. Get the latest order number
+SELECT 
+    @orderNumber:=MAX(orderNUmber)+1
+FROM
+    orders;
+
+-- 3. insert a new order for customer 145
+INSERT INTO orders(orderNumber,
+                   orderDate,
+                   requiredDate,
+                   shippedDate,
+                   status,
+                   customerNumber)
+VALUES(@orderNumber,
+       '2005-05-31',
+       '2005-06-10',
+       '2005-06-11',
+       'In Process',
+        145);
+        
+-- 4. Insert order line items
+INSERT INTO orderdetails(orderNumber,
+                         productCode,
+                         quantityOrdered,
+                         priceEach,
+                         orderLineNumber)
+VALUES(@orderNumber,'S18_1749', 30, '136', 1),
+      (@orderNumber,'S18_2248', 50, '55.09', 2); 
+      
+-- 5. commit changes    
+COMMIT;

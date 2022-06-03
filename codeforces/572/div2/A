@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  string name,ans="";
+  int n,one=0,zero=0,i=0;
+  cin>>n;
+  cin>>name;
+  if(n%2!=0)
+   {
+     cout<<"1"<<endl;
+     cout<<name<<endl;;
+   }
+  else
+   {
+     while(i<name.length())
+      {
+        if(name[i]=='1')
+         one++;
+        else 
+         zero++; 
+        i++; 
+      }
+     if(one!=zero) 
+      {
+        cout<<"1"<<endl;
+        cout<<name<<endl;
+      }
+      
+     else
+     {
+       cout<<"2"<<endl;
+       cout<<name[0]<<" "<<name.substr(1)<<endl;
+     } 
+
+   } 
+}

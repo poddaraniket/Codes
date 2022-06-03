@@ -1,0 +1,155 @@
+Q. Person A has a mobile phone/screen, 2D array of pixels.
+He punctured 1 pixel on screen, which is now a punctured/bad pixel. 
+Bad pixel makes adjacent pixels bad in 1 sec.
+Output:  Total time to make the whole screen punctured/bad.
+
+Grid = n*m
+0 represents Good pixel
+1 represents Bad/Punctured pixel
+
+0, 0, 0, 0
+0, 1, 0, 0
+0, 0, 0, 0
+Sample output: 3
+
+0, 1, 0, 0
+1, 1, 1, 0
+0, 1, 0, 0
+
+1, 1, 1, 0
+1, 1, 1, 1
+1, 1, 1, 0
+
+1, 1, 1, 1
+1, 1, 1, 1
+1, 1, 1, 1
+
+
+TC: O(n*m)
+
+int dir[4][2]={{1,0},{-1,0},{0,1},{0,-1}};
+
+pair<int,int> findBadPixel(int grid[][],int row,int col){
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            if(grid[row][col]==1){
+                return {i,j};
+            }
+        }
+    }
+    return {-1,-1};
+} 
+
+bool isSafe(int x,int y,int row,int col){
+    if(x<0 || y<0 || x>=row || y>=col)
+      return false;
+    return true;  
+}
+
+int punctureScreen(int grid[][],int row,int col){
+    pair<int,int> index=findBadPixel(grid,row,col);
+    queue<pair<int,int>> badPixels;
+    badPixels.push(index);
+    int totalTime=0;
+    while(!badPixels.empty()){
+        
+        
+        while(size--){
+            pair<int,int> pixel=badPixels.front();
+            badPixels.pop();
+            
+            //ignore if already bad
+            if(grid[pixel.first][pixel.second]==1){
+                continue;
+            }
+            
+            // making the adjacents bad pixel
+            for(int k=0;k<4;k++){
+                int x=pixel.first+dir[k][0];
+                int y=pixel.second+dir[k][1];
+                if(isSafe(x,y,row,col) && grid[x][y]!=1){
+                    grid[x][y]=1;
+                    badPixels.push({x,y});
+                }
+            }
+        }
+        //time increases once for making adjacent bad for a point
+        int size=badPixels.size();
+        if(size>0)
+          totalTime++;
+    }
+    return totalTime;
+}
+
+-----------------------------------------------------------------------------------------
+
+
+Q. You are given two linked lists representing two non-negative integers. 
+Each of their nodes contains a single digit. 
+Add the two numbers and return the sum represented as a linked list.
+
+
+Input: l1 = [2,4,3], l2 = [5,5,4]
+L1 = 2 -> 4 -> 3
+L2 = 5 -> 5 -> 4
+Output: 7 -> 9 -> 7
+Explanation: 243 + 554 = 797
+
+TC- > O(max(l1,l2))
+
+Node* reverse(Node* h1){
+    
+}
+
+
+Node *sum(Node *h1,Node* h2){
+    if(h1==NULL)
+      return h2;
+    if(h2==NULL)
+      return h1;
+    Node *reversedh1=reverse(h1);
+    Node *reversedh2=reverse(h2);
+    //L1 = 3 -> 9 -> 9
+    //L2 = 9 
+    int carry=0;
+    Node *head=NULL;
+    Node* ans=NULL;
+    int sumDigit;
+    while(reversedh1!=NULL && reversedh2!=NULL){
+        sumDigit=reversedh1->val+reversedh2->val+carry;
+        Node* newNode=addNode(sumDigit%10);
+        if(head==NULL){
+            head=newNode;
+            ans=head;
+        }else{
+            ans->next=newNode;
+            ans=ans->next;
+        }
+        carry=sumDigit/10;
+        reversedh1=reversedh1->next;
+        reversedh2=reversedh2->next;
+    }
+    while(reversedh1!=NULL){
+        sumDigit=reversedh1->val+carry;
+        Node* newNode=addNode(sumDigit%10);
+        ans->next=newNode;
+        ans=ans->next;
+        carry=sumDigit/10;
+        reversedh1=reversedh1->next;
+    }
+    while(reversedh2!=NULL){
+        sumDigit=reversedh2->val+carry;
+        Node* newNode=addNode(sumDigit%10);
+        ans->next=newNode;
+        ans=ans->next;
+        carry=sumDigit/10;
+        reversedh2=reversedh2->next;
+    }
+    if(carry>0){
+        Node* newNode=addNode(carry);
+        ans->next=newNode;
+        ans=ans->next;
+    }
+    Node *reversedHead=reverse(head);
+    return reversedHead;
+}

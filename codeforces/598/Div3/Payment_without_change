@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+   int q,a,b,n,s,div,rem;
+   cin>>q;
+   while(q--)
+    {
+      cin>>a>>b>>n>>s;
+      div=s/n;
+      if(div<a)
+       {
+         rem=s-(div*n);
+         if(rem<=b)
+           cout<<"Yes"<<endl;
+         else
+           cout<<"No"<<endl;  
+       }
+      else
+        {
+          rem=s-(a*n);
+          if(rem<=b)
+           cout<<"Yes"<<endl;
+         else
+           cout<<"No"<<endl;
+        }    
+    }
+}

@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int p;
+ 
+int mult(int a,int b)
+ {
+   return (1LL*a*b)%p;
+ }
+ 
+int pow4(int x)
+ {
+   return mult(mult(x,x),mult(x,x));
+ }
+ 
+int main() {
+  map<int,int> mp;
+  int n,k,i,num,s,rem,div,d;
+  long long ans=0;
+  // double sum;
+  cin>>n>>p>>k;
+   for(i=0;i<n;i++)
+     {
+       cin>>num;
+       s=pow4(num)-mult(k,num);
+       if(s<0)
+        {
+          div=(abs(s)/p)+1;
+          rem=(p*div)+s;
+        }
+       else
+         rem=s%p;
+      ans+=mp[rem];
+      mp[rem]++;   
+     }
+    cout<<ans<<endl; 
+    
+}

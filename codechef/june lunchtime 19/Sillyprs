@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  int A[100001],B[100001];
+  int t,n,num,i,Ao=0,Ae=0,Bo=0,Be=0,s=0,ans,p;
+  cin>>t;
+  while(t)
+    {
+      cin>>n;
+      for(i=0;i<n;i++)
+       {
+         cin>>A[i];
+         (A[i]%2==0)?Ae++:Ao++;
+       }
+      for(i=0;i<n;i++)
+       {
+         cin>>B[i];
+         (B[i]%2==0)?Be++:Bo++;
+       }
+      p=n-min(Ae,Be)-min(Ao,Bo);
+      for(i=0;i<n;i++)
+       {
+         s+=A[i]+B[i];
+       }
+      s-=p;
+      ans=s/2;
+      cout<<ans<<endl;
+      s=0;
+      Ae=0;
+      Be=0;
+      Ao=0;
+      Bo=0; 
+    }
+}

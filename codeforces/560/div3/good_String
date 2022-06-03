@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+      int n,i=0,d=0,c=0,len,len1;
+      cin>>n;
+      string name,ans="";
+      cin>>name;
+      len1=name.length();
+      // d++;
+      while(i<name.length())
+        {
+          // if(d%2!=0)
+          //  {
+             if(i==c)
+              {
+                ans+=name[i];
+                d++;
+              }
+             else if(name[c]!=name[i])
+               {
+                 ans+=name[i];
+                 d++;
+                 if(d%2!=0)
+                   c=i;
+                else
+                 {
+                  c=i+1;
+                 }
+               }
+          //  }
+          // else
+          // {
+          //   ans+=name[i];
+          //   d++;
+          //   c=i+1;
+          // }
+         i++; 
+        }
+      name=ans;  
+      len=name.length();  
+      if(len%2==0)
+       {
+         cout<<len1-len<<endl;
+         cout<<name<<endl;
+       }  
+      else
+        {
+          name.erase(name.begin()+len-1);
+          cout<<len1-len+1<<endl;
+          cout<<name<<endl;
+        }   
+}

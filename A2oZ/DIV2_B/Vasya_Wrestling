@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  long long int n,num,i,sf=0,ss=0,mini,temp,c=0;
+  cin>>n;
+  vector<long long int> f;
+  vector<long long int> s;
+  for(i=0;i<n;i++)
+   {
+     cin>>num;
+     if(i==n-1)
+      temp=num;
+     if(num>0)
+      {
+        f.push_back(num);
+        sf+=num;
+        //sf%=1000000000;
+      }
+     else
+      {
+        s.push_back(abs(num)); 
+        ss+=abs(num);
+        //ss%=1000000000;
+      }
+   }
+  if(sf>ss)
+   cout<<"first"<<endl;
+  else if(sf<ss)
+   cout<<"second"<<endl;
+  else
+    {
+      mini=min(f.size(),s.size());
+      for(i=0;i<mini;i++)
+       {
+         if(f[i]!=s[i])
+           {
+             c=1;
+             break;
+           }
+       }
+      if(c==1)
+        {
+          if(f[i]>s[i])
+           cout<<"first"<<endl;
+          else
+           cout<<"second"<<endl;
+        }
+      else
+        {
+          if(temp>0)
+           cout<<"first"<<endl;
+          else
+           cout<<"second"<<endl; 
+        }   
+    }   
+}

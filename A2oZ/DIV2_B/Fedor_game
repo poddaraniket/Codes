@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,m,i,k,num,s=0,z,count=0;
+    cin>>n>>m>>k;
+    int a[m];
+    for(i=0;i<=m;i++)
+     {
+        cin>>num;
+        a[i]=num;
+     }
+    for(i=0;i<m;i++)
+     {
+        z=(a[i]^a[m]);
+        count=0;
+         while (z) 
+        { 
+            count+= z & 1; 
+            z >>= 1; 
+        } 
+       if(count<=k)
+        s++;
+     }
+    cout<<s<<endl; 
+}

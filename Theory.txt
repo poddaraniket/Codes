@@ -1,0 +1,45 @@
+1.Process vs thread
+2.What is Semaphore, mutex
+3.Difference between mutex and semaphore and why we need this.
+4.Can we make a shared variable among threads of the same process and different process? [yes but apply lock to avoid critical section problem]
+5.what is Dynamic linking
+6.Whats is Constructor and Destructor along with its code
+7.Why do we need Destructor?
+8.what is a memory leak?
+->A memory leak is an unintentional form of memory consumption whereby the developer fails to free an allocated block of memory when no longer needed
+9.How do we manage two different processes?[context switching]
+10.What is interprocess Synchornisation?  [Interprocess communication is based on the use of shared variabless]
+11.What is Functor in C++?
+-> function wrapped in a class so that it can be availabble like an object 
+    [sort(a,a+n,greater<int>()); greater<int>() -> functor]
+12. Dangling Pointer
+13. this keyword
+14. malloc vs new
+15. void pointer
+16. Singleton Class
+17. Define floating pointer? [pointer whose data type is float]
+18. Difference between RTOS and normal OS
+19. What is a subnet?
+20. Which better between Mergesort and Quicksort. [inplacde sorting in quick sort]
+21. Difference between Overriding and Overloading
+22. Difference between C++ and Python
+23. What is preprocessor?
+24.Diff between AVL and Red-Black   -- {LD}
+25.What is the role of destructor? And when shall it be used?
+26.Difference between abstraction and encapsulation? Give an example of explaining the same?
+27.VTABLE and VPTR(Run-time Polymorphism)
+-> vTable: is a kind of function pointer array that contains the addresses all virtual functions of this class. Compiler builds this vTable at compile time. 
+    vPointer: Now for every object of a class that has a vTable associated with it, contains a vPointer in first 4 bytes. This vPointer points to the vTable of that class
+28.difference between process and thread
+29.What is the difference between multiprocessing and multithreading?
+30. Benefits of multithreading?
+31 How does a process calls another process in Operating system? [System Calls]
+32 Describe IPC in detail.
+33 This comprised of 4 different situations on using multiple or single processor in OS with the benefits of multiprocessing and multithreading.
+34.Inheritance and diamond problem -> scope and virtual base class
+35.When is converting binary tree to BST not beneficial.
+36.Code on Singleton
+37. Arays VSLinked List
+38. Name some http methods
+39. Post Vs Put (diff)
+40. Understanding of Joins. ER Digs

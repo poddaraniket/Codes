@@ -1,0 +1,5 @@
+1. Design a parking lot with all the classes and class diagram. I was asked to design everything on a whiteboard. Then he asked me how would you write an algorithm if you need to guide a car to its parking spot. He discussed the approach and was convinced with my solution. Also, the discussion moved on to how google implements google map.
+2. Producer, Consumer for posts with Read count, write count limit per user topic, ensure fast reads (scale) – cache to be used,  distributed to allow read/write to scale.
+3. Distributed cache  – how is it distributed
+4. Check if a given expression is a tautology – always true – alphabets a-z are present in the expression
+(a&&b) || !(a&&b)

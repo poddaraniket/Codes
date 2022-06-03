@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int jump(vector<int>& nums) {
+        if(nums.size()==1)
+            return 0;
+        int distanceLeft=nums[0],maxJump=0,count=1;
+        if(distanceLeft>=nums.size()-1)
+            return 1;
+        for(int i=1;i<nums.size();i++){
+            maxJump=max(maxJump,nums[i]+i);
+            if(maxJump>=nums.size()-1)
+                return count+1;
+            distanceLeft--;
+            if(distanceLeft==0){
+                count++;
+                distanceLeft=maxJump-i;
+            }
+            
+           
+        }
+        return count;
+    }
+};

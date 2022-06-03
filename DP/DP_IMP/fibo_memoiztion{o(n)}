@@ -1,0 +1,28 @@
+#include <iostream>
+#define MAX 100
+using namespace std;
+
+int memo[MAX]={0};
+
+int fib(int n)
+{
+    if(memo[n]==0)
+    {
+      if(n==1 || n==2)
+        memo[n]=1;
+      else
+        {
+           memo[n]= fib(n-1)+fib(n-2);
+        }
+    }
+    return memo[n];
+}
+
+int main() {
+	// your code goes here
+	int n,z;
+	cin>>n;
+	z=fib(n);
+	cout<<z<<endl;
+	return 0;
+}

@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  vector<int> v;
+  int n,q,l,r,num,i,count;
+  cin>>n;
+  for(i=0;i<n;i++)
+    {
+      cin>>num;
+      v.push_back(num);
+    }
+  vector<int> pref(n+1);
+  pref[0]=0;  
+  //<<pref.size()<<endl;
+  for(i=1;i<=n;i++)
+   {
+     pref[i]=pref[i-1]+v[i-1];
+   } 
+  // for(i=0;i<=n;i++)
+  //   cout<<pref[i]<<endl;  
+  cin>>q;
+  while(q)
+   { 
+     cin>>l>>r;
+     count=(pref[r]-pref[l-1])/10;
+     cout<<count<<endl;  
+     q--;
+   }  
+}

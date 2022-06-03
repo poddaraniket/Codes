@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int LS(char *x,char *y,int m ,int n)
+{
+    int i,j;
+    int ls[m+1][n+1];
+    for(i=0;i<=m;i++)
+    {
+        for(j=0;j<=n;j++)  // generating length of replaced characters
+            {
+                if(i==0 && j==0)
+                  ls[i][j]==0;
+                else{
+                    if(x[i-1]==y[j-1])
+                      ls[i][j]=ls[i-1][j-1];
+                    else
+                      ls[i][j]=1+min((min(ls[i-1][j],ls[i-1][j-1])),ls[i][j-1]);
+                }  
+            }
+    }
+    return ls[m][n];    
+}
+
+int main()
+{
+    int z;
+    char x[]="ABCHEG";
+    char y[]="ABSHDK";
+    int m=strlen(x);
+    int n=strlen(y);
+    z=LS(x,y,m,n);
+    cout<<z<<endl;
+    return 0;
+}

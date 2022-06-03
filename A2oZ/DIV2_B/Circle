@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int main()
+{
+    long long int r,x,y,xnew,ynew;
+    double dist;
+    long long int ans;
+    cin>>r>>x>>y>>xnew>>ynew;
+    dist=sqrt(((x-xnew)*(x-xnew))+((y-ynew)*(y-ynew)));
+    ans=(int)ceil(dist/(2*r));
+    cout<<ans<<endl;
+}

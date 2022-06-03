@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n,m,i,c=0,j,p=0;
+    cin>>n>>m;
+    string a[m],b[m],word[n];
+    string nam,nam1;
+    for(i=0;i<m;i++)
+     {
+         cin>>nam>>nam1;
+         if(nam.length()>nam1.length())
+           {
+            //  words.put(nam,nam1);
+             a[c]=nam;
+             b[c]=nam1;
+             c++;
+           }
+     }
+    for(i=0;i<n;i++)
+     {
+        cin>>word[i];
+     }
+    for(i=0;i<n;i++)
+     {
+         p=0;
+         for(j=0;j<m;j++)
+          {
+              if(word[i]==a[j])
+               {
+                 cout<<b[j]<<" ";
+                 p=1;
+                 break;
+               }
+          }
+        if(p==0)
+         cout<<word[i]<<" ";
+     }
+    cout<<endl; 
+}

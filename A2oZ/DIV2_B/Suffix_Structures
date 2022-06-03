@@ -1,0 +1,61 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+ 
+int main()  
+{
+  int pos=0,c=0,i;
+  int schar[26]={0};
+  int tchar[26]={0};
+  string s,t;
+  cin>>s;
+  cin>>t;
+  for(i=0;i<s.length();i++)
+    {
+        schar[s[i]-97]++;
+    }
+  for(i=0;i<t.length();i++)
+    {
+        tchar[t[i]-97]++;
+    }
+  if(s.length()==t.length())
+    {
+        for(i=0;i<26;i++)
+          {
+            if(schar[i]!=tchar[i])
+               c=1;
+          }
+        if(c==1)
+          cout<<"need tree"<<endl;
+        else
+          cout<<"array"<<endl;
+    }
+  else if(s.length()>t.length())
+     {
+        for(i=0;i<s.length();i++)
+          {
+            if(t[pos]==s[i])
+              {
+                pos++;
+              }
+          }
+        if(pos==t.length())
+           cout<<"automaton"<<endl;
+        else
+           {
+               //cout<<"hi"<<endl;
+              for(i=0;i<26;i++)
+                {
+                //   cout<<schar[i]<<" "<<tchar[i]<<endl;
+                  if(schar[i]<tchar[i])
+                    c=1;
+                }
+              if(c==1)
+                cout<<"need tree"<<endl;
+              else
+                cout<<"both"<<endl;
+           }
+     }
+   else
+     cout<<"need tree"<<endl;
+}

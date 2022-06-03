@@ -1,0 +1,76 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+   int n,c=0,count=0,p=0,i,j,ti;
+   string s,t;
+   char temp;
+   cin>>ti;
+   while(ti--)
+   {
+     p=0;
+     count=0;
+     c=0;
+   cin>>n;
+   cin>>s;
+   cin>>t;
+   int arr[2*n];
+   int a[26]={0};
+   for(i=0;i<n;i++)
+    {
+      a[s[i]-97]++;
+      a[t[i]-97]++;
+    }
+  for(i=0;i<26;i++)
+   {
+     if(a[i]%2!=0)
+      {
+        c=1;
+        break;
+      }
+   }
+  if(c>0)
+   cout<<"No"<<endl;
+  else
+   {
+     cout<<"Yes"<<endl;
+     for(i=0;i<n;i++)
+      {
+        if(s[i]!=t[i])
+         {
+           for(j=i+1;j<n;j++)
+             {
+               if(s[i]==s[j])
+                {
+                  count++;
+                  arr[p++]=i;
+                  arr[p++]=j;
+                  temp=s[j];
+                  s[j]=t[i];
+                  t[i]=temp;
+                }
+               else if(s[i]==t[j])
+                 {
+                   count++;
+                   arr[p++]=i;
+                   arr[p++]=j;
+                   temp=t[j];
+                   t[j]=s[j];
+                   s[j]=temp;
+                   temp=s[j];
+                   s[j]=t[i];
+                   t[i]=temp;
+                 } 
+             }
+         }
+      }
+  cout<<count<<endl;
+  for(i=0;i<p;i+=2)
+   {
+     cout<<arr[i]+1<<" "<<arr[i+1]+1<<endl;
+   }
+  }
+ //cout<<s<<" "<<t<<endl; 
+}
+}

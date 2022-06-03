@@ -1,0 +1,31 @@
+int minThrow(int N, int arr[]){
+        // code here
+        int moves[31];
+        memset(moves,-1,sizeof(moves));
+        for(int i=0;i<2*N;i+=2)
+         {
+             moves[arr[i]]=arr[i+1];
+         }
+        bool vis[31]={false};
+        queue<pair<int,int>> q;
+        q.push({1,0});
+        while(!q.empty()){
+            pair<int,int> p=q.front();
+            int v=p.first;
+            int dist=p.second;
+            vis[v]=true;
+            if(v==30)
+             break;
+            q.pop();
+            for(int i=v+1;i<=v+6 && i<31;i++)
+             {
+                 if(!vis[i]){
+                     pair<int,int> pi;
+                     pi.first=(moves[i]!=-1)?moves[i]:i; 
+                     pi.second=dist+1;
+                     q.push(pi);
+                 }
+             }
+        }
+       return q.front().second;    
+    }

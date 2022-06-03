@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  string a,b;
+  int i,count=0,j,ans=0;
+  cin>>a;
+  cin>>b;
+  int p=b.length();
+  for(i=0;i<=a.length()-p;i++)
+    {
+      for(j=0;j<p;j++)
+        {
+          if(a[i+j]!=b[j])
+           count++;
+        }
+      if(count%2==0)
+       ans++;
+    count=0;     
+    } 
+  cout<<ans<<endl;   
+}

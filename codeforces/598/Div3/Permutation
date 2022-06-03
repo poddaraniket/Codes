@@ -1,0 +1,60 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+   int q,n,mini,j,temp,loc,i;
+   cin>>q;
+   while(q--)
+    {
+       cin>>n;
+       mini=n+1;
+       int a[n];
+       if(n==1)
+        {
+          cin>>a[0];
+          cout<<a[0]<<endl;
+        }
+       else
+        { 
+       for(i=0;i<n;i++)
+        {
+          cin>>a[i];
+         // b[i]=a[i];
+          if(a[i]!=i+1)
+            {
+              if(mini>a[i])
+              {
+               mini=a[i];
+               loc=i;
+              }
+            }
+        }
+       //cout<<loc<<endl;   
+       for(j=loc-1;j>=0;j--)
+        {
+          if(a[j]>a[j+1])
+           {
+             temp=a[j];
+             a[j]=a[j+1];
+             a[j+1]=temp;
+           }
+        } 
+      // if(n-(loc+1)!=1) 
+       for(j=n-2;j>=loc;j--)
+        {
+          if(a[j]>a[j+1])
+           {
+             temp=a[j];
+             a[j]=a[j+1];
+             a[j+1]=temp;
+           }
+        }
+      for(i=0;i<n;i++)
+       {
+         cout<<a[i]<<" ";
+       }
+      cout<<endl; 
+        }  
+    }
+}
