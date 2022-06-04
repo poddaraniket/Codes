@@ -10,7 +10,7 @@ pair<int,int> diameterFast(Node* root){
         int leftDiamter=left.first;
         int rightDiamter=right.first;
         
-        // height= left + right + 1;
+        //  height= left + right + 1;
         int height=left.second+right.second+1;
         
         pair<int,int> ans;
