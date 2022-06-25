@@ -30,7 +30,7 @@ bool isPalindrome(string s){
                     // cout<<left<<" "<<right<<endl;
                   return true;
                  }
-                 // abc , xyxabc [right=abc left=xyx]
+                 // xyxabc , cba [right=abc left=xyx]
                  if(mp.find(right)!=mp.end() && mp[right]!=i && isPalindrome(left)){
                   return true;
                  }

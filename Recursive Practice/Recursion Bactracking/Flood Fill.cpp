@@ -5,7 +5,7 @@ once its work is done in the path make it unvisited so that it can be used in so
 In 0,0 when we go down to 0,1 exploring 'd' and then when we go up from 0,1 to 0,0 
 exlporing 't' it will go infinite there for marking it vistited
 
-when we go 0,0->1,0->2,0->2,1->3,1->4,1->4,2->5,2->5,3->5,4->4,4->3,4->2,4->2,5->2,6->1,6->0,6 ->0,5->0,4->0,3->0,2->1,2 
+when we go 0,0->1,0->2,0->2,1->2,2->2,3->2,4->(2,5)->2,6->1,6->0,6->(0,5)->0,4->0,3->0,2->1,2 
 marked all visited now after we come back to 5,4 and exlore 5,5->5,6 path and get one path 
 There is one more path at min that goes from 2,1->2,2->2,3->2,4->3,4->4,4->5,4->5,5->5,6
 but we cannot exlore that as its made visited so we need to mark the grid not visited on our way back from that grid(back track)

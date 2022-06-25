@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 using namespace std;
 
 int main() {
@@ -26,9 +26,8 @@ int main() {
 	     int maxdiff=-arr[0];
 	     for(int j=1;j<n;j++)
 	      {
+	      	  maxdiff=max(maxdiff,dp[i-1][j-1]-arr[j-1]);
 	          dp[i][j]=max(dp[i][j-1],arr[j]+maxdiff);
-	          maxdiff=max(maxdiff,dp[i-1][j]-arr[j]);
-	          
 	      }
 	 }
 	cout<<dp[k][n-1]<<endl; 

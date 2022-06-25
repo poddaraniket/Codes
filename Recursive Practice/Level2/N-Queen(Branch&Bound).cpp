@@ -1,6 +1,4 @@
 /*
-
-/*
 we make the grid 1 when we place the queen there and make it 0 again when we remove it from there 
 
 // n -> row n->queen (place each queen in each row)
@@ -21,9 +19,6 @@ we make the grid 1 when we place the queen there and make it 0 again when we rem
 Almost lik above bt here the brnches are more blocked bcoz once a queen is placed 
 in its row it blocks its column and its diagonals as well so we have to filter 
 less for next queen in the next row
-
-
-*/
 
 
 */
